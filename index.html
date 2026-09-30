@@ -212,7 +212,7 @@ function startLiveAnimation(){
   document.getElementById("quotaTotal").textContent="30 cajas";
  },1100);
 }
-const observer=new IntersectionObserver(e=>{if(e[0].isIntersecting){animate();observer.disconnect()}},{threshold:.25});observer.observe(document.querySelector(".chart-box"));
+const observer=new IntersectionObserver(e=>{if(e[0].isIntersecting){animateIn();observer.disconnect()}},{threshold:.25});observer.observe(document.querySelector(".chart-box"));
 
 const typeEls=[...document.querySelectorAll(".type")];
 const typeObserver=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add("show");typeObserver.unobserve(e.target)}})},{threshold:.15});
