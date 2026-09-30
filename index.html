@@ -29,12 +29,13 @@
 .pair-card img{width:100%;height:150px;object-fit:contain}
 .warning{background:#fff8f8;border:3px solid var(--red2);border-radius:20px;padding:25px;text-align:center}.warning .icon{font-size:42px}.warning h2{color:#b40000}.warning p{font-size:19px;line-height:1.55;margin:8px auto;max-width:820px}.warning strong{color:#a90000}
 .graph-title{text-align:center;margin-bottom:5px}.sub{text-align:center;color:#222;margin:0 0 20px;line-height:1.5}
-.chart-box{position:relative;padding:12px 8px 8px;background:#fff;border:1px solid #ccd7e2;border-radius:18px}.chart{height:380px;display:flex;align-items:stretch}
-.yaxis{width:44px;display:flex;flex-direction:column;justify-content:space-between;align-items:flex-end;padding:2px 8px 42px 0;color:#111;font-size:12px}
+.chart-box{position:relative;padding:14px 12px 12px;background:#fff;border:1px solid #ccd7e2;border-radius:18px}.chart{height:410px;display:flex;align-items:stretch}
+.yaxis{width:44px;display:flex;flex-direction:column;justify-content:space-between;align-items:flex-end;padding:2px 8px 62px 0;color:#111;font-size:12px}
 .plot{flex:1;position:relative;border-left:2px solid #111;border-bottom:2px solid #111;background:repeating-linear-gradient(to bottom,transparent 0,transparent calc(20% - 1px),#d7d7d7 calc(20% - 1px),#d7d7d7 20%)}
-.bars{position:absolute;inset:0 8px;display:flex;align-items:flex-end;justify-content:space-around;gap:7px}.barwrap{height:100%;flex:1;max-width:72px;display:flex;flex-direction:column;justify-content:flex-end;align-items:center}
-.bar{width:min(58px,78%);height:0;background:linear-gradient(180deg,#16b56f,#0757b8);border-radius:9px 9px 0 0;transition:height 1s cubic-bezier(.2,.8,.2,1);position:relative;display:flex;align-items:center;justify-content:flex-start;overflow:hidden}.bar span{position:absolute;top:7px;left:50%;transform:translateX(-50%) rotate(-90deg);transform-origin:center;font-size:11px;font-weight:900;color:#fff;white-space:nowrap;opacity:0;text-shadow:0 1px 2px rgba(0,0,0,.45);letter-spacing:.2px}.bar.done span{opacity:1}
-.labels{display:flex;gap:7px;padding:8px 8px 0 52px}.labels div{flex:1;text-align:center;font-size:11px;font-weight:800;white-space:nowrap;color:#111}.total{text-align:center;margin-top:18px;font-size:20px;font-weight:800;color:#111}.total b{color:#0757b8}
+.bars{position:absolute;inset:0 8px;display:flex;align-items:flex-end;justify-content:space-around;gap:5px}.barwrap{height:100%;flex:1;max-width:78px;display:flex;flex-direction:column;justify-content:flex-end;align-items:center}
+.bar{width:min(54px,82%);height:0;background:linear-gradient(180deg,#16b56f,#0757b8);border-radius:9px 9px 0 0;transition:height 1s cubic-bezier(.2,.8,.2,1);position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;box-shadow:0 2px 7px rgba(0,0,0,.18)}
+.bar span{position:absolute;top:9px;left:50%;transform:translateX(-50%);font-size:10px;font-weight:900;color:#fff;white-space:nowrap;opacity:0;text-shadow:0 1px 2px rgba(0,0,0,.5);letter-spacing:.1px}.bar.done span{opacity:1}
+.labels{display:flex;gap:5px;padding:8px 8px 0 52px}.labels div{flex:1;text-align:center;font-size:10px;font-weight:800;color:#111;min-width:0}.xlogo{height:38px;width:100%;object-fit:contain;margin-top:4px}.xlogo-stack{height:48px;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px}.xlogo-stack img{width:42px;height:21px;object-fit:contain}.quota-total{position:absolute;right:-2px;top:8px;transform:translateX(100%);background:#0757b8;color:#fff;border-radius:12px;padding:12px 14px;min-width:142px;text-align:center;font-size:13px;font-weight:900;box-shadow:0 7px 16px rgba(0,0,0,.18);z-index:5}.quota-total b{display:block;font-size:22px;margin-top:3px}.total{text-align:center;margin-top:18px;font-size:20px;font-weight:800;color:#111}.total b{color:#0757b8}
 .whatsapp{background:linear-gradient(135deg,#0757b8,#18a9e8);color:#fff;padding:25px;border-radius:20px;text-align:center;position:relative;overflow:hidden}
 .whatsapp h2{color:#fff;margin-bottom:8px}.whatsapp p{color:#fff;font-size:18px;margin:8px auto 18px;line-height:1.5}
 .wa-content{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap}
@@ -48,7 +49,7 @@ footer{text-align:center;color:#fff;font-size:13px;padding:10px 0 25px;position:
 .page-bubbles{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}.page-bubbles .bubble{bottom:-60px;background:rgba(255,255,255,.13);border-color:rgba(255,255,255,.28)}
 .type{opacity:0;transform:translateY(10px);transition:opacity .7s ease,transform .7s ease}.type.show{opacity:1;transform:translateY(0)}
 @media(max-width:800px){.brands-grid{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:650px){.wrap{padding:10px}.hero{min-height:190px;padding:28px 16px}.section{padding:19px}.corner-logo{width:68px;height:68px;right:10px;top:10px}.brands-grid{grid-template-columns:repeat(2,1fr);gap:10px}.brand-card{min-height:120px}.brand-card img{height:90px}.chart{height:300px}.labels div{font-size:9px}.bar{width:min(38px,80%)}.bar span{font-size:9px}.message,.warning p{font-size:17px}.final p{font-size:17px}.pair-grid{grid-template-columns:1fr}.pair-card img{height:135px}.wa-avatar{width:110px;height:110px}.wa-button{font-size:16px;padding:14px 20px}.footer-logos{padding-left:8px;padding-right:8px}.footer-logos img{width:95px;height:65px}}
+@media(max-width:650px){.wrap{padding:10px}.hero{min-height:190px;padding:28px 16px}.section{padding:19px}.corner-logo{width:68px;height:68px;right:10px;top:10px}.brands-grid{grid-template-columns:repeat(2,1fr);gap:10px}.brand-card{min-height:120px}.brand-card img{height:90px}.chart{height:320px}.labels div{font-size:8px}.bar{width:min(34px,80%)}.bar span{font-size:8px}.xlogo{height:30px}.xlogo-stack{height:40px}.xlogo-stack img{width:34px;height:18px}.quota-total{right:4px;top:auto;bottom:8px;transform:none;min-width:112px;padding:8px 9px;font-size:10px}.quota-total b{font-size:17px}.message,.warning p{font-size:17px}.final p{font-size:17px}.pair-grid{grid-template-columns:1fr}.pair-card img{height:135px}.wa-avatar{width:110px;height:110px}.wa-button{font-size:16px;padding:14px 20px}.footer-logos{padding-left:8px;padding-right:8px}.footer-logos img{width:95px;height:65px}}
 </style>
 </head>
 <body>
@@ -105,8 +106,9 @@ footer{text-align:center;color:#fff;font-size:13px;padding:10px 0 25px;position:
 <div class="chart-box">
 <div class="chart"><div class="yaxis"><span>30</span><span>25</span><span>20</span><span>15</span><span>10</span><span>5</span><span>0</span></div><div class="plot"><div class="bars" id="bars"></div></div></div>
 <div class="labels" id="labels"></div>
+<div class="quota-total">TOTAL =<b><span id="quotaTotal">30</span> cajas</b>CUOTA DE ENFRIADOR</div>
 </div>
-<div class="total type">Volumen ilustrativo: <b><span id="total">0</span> cajas</b></div>
+<div class="total type">Cada barra representa las cajas que aporta una marca. <b>El total se compara contra la cuota del enfriador.</b></div>
 <p class="sub type" style="margin-top:20px">Los valores de esta gráfica son únicamente ilustrativos y no representan una cuota específica.</p>
 </section>
 
@@ -171,11 +173,45 @@ function actualizarSaludo(){
 }
 actualizarSaludo();setInterval(actualizarSaludo,60000);
 
-// Valores únicamente ilustrativos. Las marcas están ordenadas de mayor a menor volumen de ejemplo.
-const data=[["Aguafiel",6],["Cross Sabores",5],["Marca 3",4],["Marca 4",3],["Marca 5",3],["Marca 6",3],["Marca 7",2],["Marca 8",2],["Marca 9",1],["Marca 10",1]];
+// Ejemplo visual: 10 posiciones de marcas. Las alturas cambian para representar clientes/puntos de venta distintos.
+const brandImages=[
+ "https://i.ibb.co/Gv3cRRdc/Logo-Aguafiel-2.png",
+ "https://i.ibb.co/GfjQ3c1G/1000025618-bf825456c1d5580a528d5315312af723-23-4-2025-6-50-41-p-m-20251013-195258-0000.png",
+ "https://i.ibb.co/ynkKdGX1/1000025606-1d4a51831b907a4f8b501fbec7c7af2e-23-4-2025-6-51-41-p-m-20251013-195212-0000.png",
+ "https://i.ibb.co/Mw6dRGG/1000025646-9d370f5f68af783e23b5a9b0f5505bbb-23-4-2025-6-07-08-p-m-20251013-195450-0000.png",
+ "https://i.ibb.co/N6fbMLZD/1000006945-0068a95808c67fc45319ac198c497c31-9-3-2025-10-24-49-p-m-20251013-195609-0000.png",
+ "https://i.ibb.co/jk16xsZJ/1000025638-0b248c89ee1732eb0af84073f3428ec0-23-4-2025-5-49-36-p-m-20251013-195532-0000.png",
+ "https://i.ibb.co/V0fSTkwF/1000025650-5c50d0142ea71648da15e8f0ddafd61f-23-4-2025-5-59-26-p-m-20251013-195518-0000.png",
+ "https://i.ibb.co/vxJR42Kb/1000025666-58cc64ab75c3f8d940573a1759577a32-23-4-2025-6-00-22-p-m-20251013-195509-0000.png",
+ "https://i.ibb.co/Y7QxbJjY/1000025654-2692218fc8dc6f2b016e8d3683e5f858-23-4-2025-6-11-09-p-m-20251013-195350-0000.png",
+ "https://i.ibb.co/nNxrbRyh/1000025602-62ddb21849f0361580bc4d0efa34354e-23-4-2025-6-11-20-p-m-20251013-195339-0000.png"
+];
+const names=["Aguafiel","Cross Sabores","Marca 3","Marca 4","Marca 5","Marca 6","Marca 7","Marca 8","Marca 9","Marca 10"];
+const start=[6,5,4,3,3,3,2,2,1,1];
 const bars=document.getElementById("bars"),labels=document.getElementById("labels");
-data.forEach(([name,value])=>{const w=document.createElement("div");w.className="barwrap";const b=document.createElement("div");b.className="bar";b.dataset.height=(value/30*100)+"%";const s=document.createElement("span");s.textContent=value;b.appendChild(s);w.appendChild(b);bars.appendChild(w);const l=document.createElement("div");l.textContent=name;labels.appendChild(l)});
-let i=0;function animate(){const bs=document.querySelectorAll(".bar");if(i<bs.length){bs[i].style.height=bs[i].dataset.height;bs[i].classList.add("done");i++;document.getElementById("total").textContent=data.slice(0,i).reduce((a,b)=>a+b[1],0);setTimeout(animate,300)}}
+names.forEach((name,k)=>{
+ const w=document.createElement("div");w.className="barwrap";
+ const b=document.createElement("div");b.className="bar";b.dataset.base=start[k];
+ const s=document.createElement("span");s.textContent=start[k];b.appendChild(s);w.appendChild(b);bars.appendChild(w);
+ const l=document.createElement("div");l.innerHTML=k===8?'<div class="xlogo-stack"><img src="https://i.ibb.co/ZzMtgbhD/1000025658-348f843033ce99ece84ca729355c0f1b-23-4-2025-6-00-49-p-m-20251013-195500-0000.png" alt="Red Bull"><img src="https://i.ibb.co/V02qdfLy/1000007070-9694f92c3b44fe9ffead942f230bfb91-9-3-2025-11-01-30-p-m-20251013-195555-0000.png" alt="Venom"></div>':'<img class="xlogo" src="'+brandImages[k]+'" alt="'+name+'">';
+ labels.appendChild(l);
+});
+let i=0;
+function animateIn(){
+ const bs=document.querySelectorAll(".bar");
+ if(i<bs.length){bs[i].style.height=(start[i]/30*100)+"%";bs[i].classList.add("done");i++;setTimeout(animateIn,220)}
+ else{startLiveAnimation()}
+}
+function startLiveAnimation(){
+ setInterval(()=>{
+  let sum=0;
+  document.querySelectorAll(".bar").forEach((b,k)=>{
+   const v=Math.max(2,Math.min(30,start[k]+Math.round(Math.sin(Date.now()/700+k)*2)));
+   b.style.height=(v/30*100)+"%";b.querySelector("span").textContent=v;sum+=v;
+  });
+  document.getElementById("quotaTotal").textContent="30 cajas";
+ },1100);
+}
 const observer=new IntersectionObserver(e=>{if(e[0].isIntersecting){animate();observer.disconnect()}},{threshold:.25});observer.observe(document.querySelector(".chart-box"));
 
 const typeEls=[...document.querySelectorAll(".type")];
