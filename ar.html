@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Experiencia AR · Peñafiel</title>
+<style>
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;font-family:Arial,Helvetica,sans-serif;background:#050b14;color:#fff}
+#camera{position:fixed;inset:0;width:100%;height:100%;object-fit:cover;background:#050b14}
+.shade{position:fixed;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.55),transparent 28%,transparent 65%,rgba(0,0,0,.6));pointer-events:none}
+.top{position:fixed;top:0;left:0;right:0;padding:18px;text-align:center;z-index:5}
+.top b{display:inline-block;background:rgba(0,0,0,.62);border:2px solid #fff;border-radius:999px;padding:10px 16px;font-size:16px}
+.hint{position:fixed;top:78px;left:50%;transform:translateX(-50%);width:min(92%,520px);text-align:center;z-index:5;font-weight:800;font-size:18px;text-shadow:0 2px 8px #000}
+.card{position:fixed;left:50%;bottom:8%;transform:translate(-50%,20px) scale(.85);width:min(88%,430px);padding:20px;border-radius:26px;background:rgba(255,255,255,.95);color:#123;box-shadow:0 15px 45px rgba(0,0,0,.55);opacity:0;transition:.55s ease;z-index:6;text-align:center}
+.card.show{opacity:1;transform:translate(-50%,0) scale(1)}
+.card img{width:min(58vw,220px);height:150px;object-fit:contain;display:block;margin:0 auto 8px}
+.card h1{margin:0;color:#0057b8;font-size:30px}.card p{font-size:19px;line-height:1.4;margin:10px 0}
+button{border:0;border-radius:999px;padding:14px 22px;font-size:17px;font-weight:900;background:#25d366;color:#fff;box-shadow:0 8px 20px rgba(0,0,0,.25)}
+.start{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;padding:22px;background:linear-gradient(160deg,#003f91,#19a7e8);z-index:20;text-align:center}
+.start-box{max-width:470px;background:rgba(255,255,255,.97);color:#111;border-radius:28px;padding:28px;box-shadow:0 20px 60px rgba(0,0,0,.35)}
+.start-box h1{margin:0 0 10px;color:#0057b8;font-size:34px}.start-box p{font-size:18px;line-height:1.5}
+#status{font-weight:800;margin-top:12px;min-height:24px}
+.hidden{display:none!important}
+</style>
+</head>
+<body>
+<video id="camera" autoplay muted playsinline></video>
+<div class="shade"></div>
+<div class="top"><b>✨ EXPERIENCIA PEÑAFIEL ✨</b></div>
+<div class="hint" id="hint">Apunta tu teléfono al producto o al exhibidor.</div>
+
+<div class="card" id="productCard">
+<img src="https://i.ibb.co/Gv3cRRdc/Logo-Aguafiel-2.png" alt="Aguafiel">
+<h1>¡Hola! 👋</h1>
+<p>Conoce nuevas formas de hidratarte. <strong>Hazlo con Aguafiel.</strong></p>
+<button id="repeat">🔊 Escuchar de nuevo</button>
+</div>
+
+<div class="start" id="start">
+<div class="start-box">
+<h1>Realidad aumentada</h1>
+<p>Permite el acceso a la cámara y descubre la experiencia de Peñafiel.</p>
+<button id="startBtn">📷 Activar experiencia</button>
+<div id="status"></div>
+</div>
+</div>
+
+<script>
+const camera=document.getElementById("camera");
+const start=document.getElementById("start");
+const startBtn=document.getElementById("startBtn");
+const status=document.getElementById("status");
+const card=document.getElementById("productCard");
+const hint=document.getElementById("hint");
+const repeat=document.getElementById("repeat");
+
+function hablar(){
+  if(!("speechSynthesis" in window)){
+    status.textContent="Tu navegador no tiene voz disponible.";
+    return;
+  }
+  speechSynthesis.cancel();
+  const u=new SpeechSynthesisUtterance("Hola. Conoce nuevas formas de hidratarte. Hazlo con Aguafiel.");
+  u.lang="es-MX";u.rate=.95;u.pitch=1;
+  speechSynthesis.speak(u);
+}
+async function iniciar(){
+  try{
+    const stream=await navigator.mediaDevices.getUserMedia({video:{facingMode:{ideal:"environment"}},audio:false});
+    camera.srcObject=stream;
+    start.classList.add("hidden");
+    card.classList.add("show");
+    hint.textContent="✨ Producto reconocido: Aguafiel ✨";
+    setTimeout(hablar,450);
+  }catch(e){
+    status.textContent="Necesitamos permiso para usar la cámara. Actívalo y vuelve a intentarlo.";
+  }
+}
+startBtn.addEventListener("click",iniciar);
+repeat.addEventListener("click",hablar);
+</script>
+</body>
+</html>
