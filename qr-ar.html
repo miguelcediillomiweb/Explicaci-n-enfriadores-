@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>QR · Realidad aumentada Peñafiel</title>
+<style>
+body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(160deg,#003f91,#19a7e8);font-family:Arial,sans-serif;padding:20px;color:#111}
+.box{background:#fff;border-radius:28px;padding:28px;text-align:center;max-width:520px;width:100%;box-shadow:0 20px 55px rgba(0,0,0,.3)}
+h1{color:#0057b8;margin:0 0 8px}.sub{font-size:18px;line-height:1.45}#qrcode{display:flex;justify-content:center;margin:22px auto;padding:14px;background:#fff}a{display:inline-block;background:#25d366;color:#fff;text-decoration:none;font-weight:900;padding:14px 22px;border-radius:999px}.small{font-size:13px;color:#555;margin-top:18px;word-break:break-all}
+</style></head><body><div class="box"><h1>✨ Realidad aumentada Peñafiel</h1><p class="sub">Escanea este código QR con el teléfono del cliente para abrir la experiencia.</p><div id="qrcode"></div><a href="ar.html">📱 Abrir experiencia</a><p class="small" id="url"></p></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script><script>
+const url=new URL("ar.html",location.href).href;document.getElementById("url").textContent=url;
+new QRCode(document.getElementById("qrcode"),{text:url,width:260,height:260,colorDark:"#111",colorLight:"#fff",correctLevel:QRCode.CorrectLevel.H});
+</script></body></html>
